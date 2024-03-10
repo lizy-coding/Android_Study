@@ -20,7 +20,7 @@ class ButtonEnableActivity : AppCompatActivity(), View.OnClickListener {
         tv_result = findViewById(R.id.tv_result)
         btn_enable.setOnClickListener(this)
         btn_disable.setOnClickListener(this)
-        btn_test.setOnClickListener(this)
+        btn_test?.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -40,7 +40,7 @@ class ButtonEnableActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.btn_test -> {
                 val desc =
-                    String.format("%s 您点击了按钮： %s", DateUtil.getNowTime(), (v as Button).text)
+                    String.format("%s 您点击了按钮： %s", DateUtil.getNowTime, (v as Button).text)
                 tv_result!!.text = desc
             }
         }

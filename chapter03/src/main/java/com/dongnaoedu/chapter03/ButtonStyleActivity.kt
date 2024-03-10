@@ -17,7 +17,7 @@ class ButtonStyleActivity : AppCompatActivity() {
 
     fun doClick(view: View) {
         val desc =
-            String.format("%s 您点击了按钮： %s", DateUtil.getNowTime(), (view as Button).text)
+            String.format("%s 您点击了按钮： %s", DateUtil.getNowTime, (view as Button).text)
         tv_result!!.text = desc
     }
 }

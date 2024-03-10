@@ -22,7 +22,7 @@ class ButtonClickActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View) {
         if (v.id == R.id.btn_click_public) {
             val desc =
-                String.format("%s 您点击了按钮： %s", DateUtil.getNowTime(), (v as Button).text)
+                String.format("%s 您点击了按钮： %s", DateUtil.getNowTime, (v as Button).text)
             tv_result!!.text = desc
         }
     }
@@ -30,7 +30,7 @@ class ButtonClickActivity : AppCompatActivity(), View.OnClickListener {
     internal class MyOnClickListener(private val tv_result: TextView?) : View.OnClickListener {
         override fun onClick(v: View) {
             val desc =
-                String.format("%s 您点击了按钮： %s", DateUtil.getNowTime(), (v as Button).text)
+                String.format("%s 您点击了按钮： %s", DateUtil.getNowTime, (v as Button).text)
             tv_result!!.text = desc
         }
     }

@@ -15,7 +15,7 @@ class ButtonLongClickActivity : AppCompatActivity() {
         val btn_long_click = findViewById<Button>(R.id.btn_long_click)
         btn_long_click.setOnLongClickListener { v: View ->
             val desc =
-                String.format("%s 您点击了按钮： %s", DateUtil.getNowTime(), (v as Button).text)
+                String.format("%s 您点击了按钮： %s", DateUtil.getNowTime, (v as Button).text)
             tv_result.text = desc
             true
         }
