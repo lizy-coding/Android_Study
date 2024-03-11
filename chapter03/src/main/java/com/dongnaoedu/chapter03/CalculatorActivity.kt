@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import kotlin.math.sqrt
 
 class CalculatorActivity : AppCompatActivity(), View.OnClickListener {
-    private var tv_result: TextView? = null
+    // 输入框文本
+    private var textView: TextView? = null
 
     // 第一个操作数
     private var firstNum = ""
@@ -26,7 +28,7 @@ class CalculatorActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculator)
         // 从布局文件中获取名叫tv_result的文本视图
-        tv_result = findViewById(R.id.tv_result)
+        textView = findViewById(R.id.tv_result)
         // 下面给每个按钮控件都注册了点击监听器
         findViewById<View>(R.id.btn_cancel).setOnClickListener(this)
         findViewById<View>(R.id.btn_divide).setOnClickListener(this) // “除法”按钮
@@ -51,9 +53,8 @@ class CalculatorActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        val inputText: String
         // 如果是开根号按钮
-        inputText = if (v.id == R.id.ib_sqrt) {
+        val inputText: String = if (v.id == R.id.ib_sqrt) {
             "√"
         } else {
             // 除了开根号之外的其他按钮
@@ -69,35 +70,35 @@ class CalculatorActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.btn_equal -> {
                 // 加减乘除四则运算
-                val calculate_result = calculateFour()
-                refreshOperate(calculate_result.toString())
+                val calculateResult = calculateFour()
+                refreshOperate(calculateResult.toString())
                 refreshText("$showText=$result")
             }
 
             R.id.ib_sqrt -> {
-                val sqrt_result = Math.sqrt(firstNum.toDouble())
-                refreshOperate(sqrt_result.toString())
+                val sqrtResult = sqrt(firstNum.toDouble())
+                refreshOperate(sqrtResult.toString())
                 refreshText("$showText√=$result")
             }
 
             R.id.btn_reciprocal -> {
-                val reciprocal_result = 1.0 / firstNum.toDouble()
-                refreshOperate(reciprocal_result.toString())
+                val reciprocalResult = 1.0 / firstNum.toDouble()
+                refreshOperate(reciprocalResult.toString())
                 refreshText("$showText/=$result")
             }
 
             else -> {
                 // 上次的运算结果已经出来了
-                if (result.length > 0 && operator == "") {
+                if (result.isNotEmpty() && operator == "") {
                     clear()
                 }
 
                 // 无运算符，则继续拼接第一个操作数
                 if (operator == "") {
-                    firstNum = firstNum + inputText
+                    firstNum += inputText
                 } else {
                     // 有运算符，则继续拼接第二个操作数
-                    secondNum = secondNum + inputText
+                    secondNum += inputText
                 }
                 // 整数不需要前面的0
                 if (showText == "0" && inputText != ".") {
@@ -126,8 +127,8 @@ class CalculatorActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     // 刷新运算结果
-    private fun refreshOperate(new_result: String) {
-        result = new_result
+    private fun refreshOperate(newResult: String) {
+        result = newResult
         firstNum = result
         secondNum = ""
         operator = ""
@@ -136,6 +137,6 @@ class CalculatorActivity : AppCompatActivity(), View.OnClickListener {
     // 刷新文本显示
     private fun refreshText(text: String) {
         showText = text
-        tv_result!!.text = showText
+        textView?.text = showText
     }
 }

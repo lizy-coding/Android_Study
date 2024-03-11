@@ -8,7 +8,7 @@ class TextSizeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_text_size)
-        val tv_px = findViewById<TextView>(R.id.tv_px)
-        tv_px.textSize = 30f
+        val textView = findViewById<TextView>(R.id.tv_px)
+        textView.textSize = 30f
     }
 }
