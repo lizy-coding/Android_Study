@@ -9,7 +9,7 @@ class TextViewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_text_view)
-        val tv_hello = findViewById<TextView>(R.id.tv_hello)
-        tv_hello.setText(R.string.hello)
+        val textView = findViewById<TextView>(R.id.tv_hello)
+        textView.setText(R.string.hello)
     }
 }
