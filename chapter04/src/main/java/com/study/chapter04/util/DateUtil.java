@@ -1,4 +1,4 @@
-package com.dongnaoedu.chapter04.util;
+package com.study.chapter04.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

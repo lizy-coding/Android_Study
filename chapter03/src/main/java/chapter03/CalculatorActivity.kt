@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.dongnaoedu.chapter03.R
+import com.study.chapter03.R
 
 class CalculatorActivity : AppCompatActivity(), View.OnClickListener {
     private var tv_result: TextView? = null

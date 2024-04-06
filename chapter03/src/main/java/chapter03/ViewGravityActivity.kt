@@ -2,7 +2,7 @@ package chapter03
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.dongnaoedu.chapter03.R
+import com.study.chapter03.R
 
 class ViewGravityActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

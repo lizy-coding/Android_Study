@@ -10,8 +10,8 @@
 
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.dongnaoedu.chapter04.ActStartActivity"
-            android:targetPackage="com.dongnaoedu.chapter04" />
+            android:targetClass="com.study.chapter04.ActStartActivity"
+            android:targetPackage="com.study.chapter04" />
         <categories android:name="android.shortcut.conversation" />
     </shortcut>
 
@@ -25,8 +25,8 @@
 
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.dongnaoedu.chapter04.JumpFirstActivity"
-            android:targetPackage="com.dongnaoedu.chapter04" />
+            android:targetClass="com.study.chapter04.JumpFirstActivity"
+            android:targetPackage="com.study.chapter04" />
         <categories android:name="android.shortcut.conversation" />
     </shortcut>
 
@@ -39,8 +39,8 @@
 
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.dongnaoedu.chapter04.LoginInputActivity"
-            android:targetPackage="com.dongnaoedu.chapter04" />
+            android:targetClass="com.study.chapter04.LoginInputActivity"
+            android:targetPackage="com.study.chapter04" />
         <categories android:name="android.shortcut.conversation" />
     </shortcut>
 </shortcuts>

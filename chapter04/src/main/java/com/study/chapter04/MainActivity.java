@@ -1,14 +1,14 @@
-package com.study.myapplication;
+package com.study.chapter04;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.study.myapplication.R;
+
 import android.os.Bundle;
 
-public class MainActivity3 extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_main);
     }
 }

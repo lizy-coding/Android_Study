@@ -1,5 +1,4 @@
-package com.dongnaoedu.myapplication;
-
+package com.study.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +6,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.study.myapplication.R;
 
 public class MainActivity extends AppCompatActivity {
 

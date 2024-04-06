@@ -6,7 +6,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import chapter03.util.DateUtil
-import com.dongnaoedu.chapter03.R
+import com.study.chapter03.R
 
 class ButtonLongClickActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

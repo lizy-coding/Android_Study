@@ -1,4 +1,4 @@
-package com.dongnaoedu.chapter04;
+package com.study.chapter04;
 
 import org.junit.Test;
 

@@ -6,7 +6,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import chapter03.util.DateUtil
-import com.dongnaoedu.chapter03.R
+import com.study.chapter03.R
 
 class ButtonClickActivity : AppCompatActivity(), View.OnClickListener {
     private var tv_result: TextView? = null
@@ -14,10 +14,10 @@ class ButtonClickActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_button_click)
         tv_result = findViewById(R.id.tv_result)
-        val btn_click_single = findViewById<Button>(R.id.btn_click_single)
-        btn_click_single.setOnClickListener(MyOnClickListener(tv_result))
-        val btn_click_public = findViewById<Button>(R.id.btn_click_public)
-        btn_click_public.setOnClickListener(this)
+        val btnClickSingle = findViewById<Button>(R.id.btn_click_single)
+        btnClickSingle.setOnClickListener(MyOnClickListener(tv_result))
+        val btnClickPublic = findViewById<Button>(R.id.btn_click_public)
+        btnClickPublic.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {

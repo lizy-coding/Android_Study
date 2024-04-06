@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import chapter03.util.DateUtil
-import com.dongnaoedu.chapter03.R
+import com.study.chapter03.R
 
 class ButtonEnableActivity : AppCompatActivity(), View.OnClickListener {
     private var btn_test: Button? = null
