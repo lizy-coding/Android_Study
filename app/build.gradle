@@ -4,11 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    namespace "android.study.zzy"
+    compileSdk 34
     defaultConfig {
-        applicationId "com.dongnaoedu.myapplication"
+        applicationId "com.study.myapplication"
         minSdk 24
-        targetSdk 31
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -21,7 +22,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    namespace 'com.dongnaoedu.myapplication'
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8

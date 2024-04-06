@@ -1,10 +1,18 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
-    id 'com.android.application' version '8.2.2' apply false
-    id 'com.android.library' version '8.2.2' apply false
+    id 'com.android.library' version '8.3.0'
     id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+android {
+    // 如果你确实需要设置命名空间，请确保你的 AGP 版本支持，并且你的项目结构正确
+    // 如果不需要设置命名空间，请移除这些 namespace 配置
+    compileSdk  34
+    namespace "android.study.zzy"
+    defaultConfig {
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
 }
