@@ -1,13 +1,11 @@
 plugins {
     id 'com.android.library' version '8.3.0'
-    id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.0'
 }
 
 android {
-    // 如果你确实需要设置命名空间，请确保你的 AGP 版本支持，并且你的项目结构正确
-    // 如果不需要设置命名空间，请移除这些 namespace 配置
-    compileSdk  34
-    namespace "android.study.zzy"
+    namespace "com.study.chapter04" // 设置正确的命名空间
+    compileSdk 34
     defaultConfig {
         minSdk 24
         targetSdk 34

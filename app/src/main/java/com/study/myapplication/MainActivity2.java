@@ -1,11 +1,11 @@
 package com.study.myapplication;
 
 import android.os.Bundle;
+import android.study.zzy.R;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.study.myapplication.R;
 
 public class MainActivity2 extends AppCompatActivity {
 

@@ -5,7 +5,8 @@ plugins {
 
 android {
     compileSdk 34
-    namespace "com.study.chapter04"
+    namespace "com.study.chapter04" // 设置正确的命名空间
+
     defaultConfig {
         applicationId "com.study.chapter04"
         minSdk 24
@@ -23,21 +24,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-//    namespace "com.study.chapter04"
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
 }
-dependencies {
 
+dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
