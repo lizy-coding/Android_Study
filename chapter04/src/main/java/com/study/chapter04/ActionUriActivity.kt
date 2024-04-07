@@ -32,7 +32,7 @@ class ActionUriActivity : AppCompatActivity(), View.OnClickListener {
                 // 设置意图动作为发短信
                 intent.setAction(Intent.ACTION_SENDTO)
                 // 声明一个发送短信的Uri
-                val uri2 = Uri.parse("smsto:$phoneNo")
+                val uri2 = Uri.parse("sms to:$phoneNo")
                 intent.setData(uri2)
                 startActivity(intent)
             }

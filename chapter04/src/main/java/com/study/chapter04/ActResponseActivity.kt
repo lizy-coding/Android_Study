@@ -1,5 +1,6 @@
 package com.study.chapter04
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -8,24 +9,25 @@ import androidx.appcompat.app.AppCompatActivity
 import com.study.chapter04.util.DateUtil.nowTime
 
 class ActResponseActivity : AppCompatActivity(), View.OnClickListener {
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_act_response)
-        val tv_request = findViewById<TextView>(R.id.tv_request)
+        val tvRequest = findViewById<TextView>(R.id.tv_request)
         // 从上一个页面传来的意图中获取快递包裹
         val bundle = intent.extras
-        val request_time = bundle!!.getString("request_time")
-        val request_content = bundle.getString("request_content")
+        val requestTime = bundle!!.getString("request_time")
+        val requestContent = bundle.getString("request_content")
         val desc = String.format(
             "收到请求消息：\n请求时间为%s\n请求内容为%s",
-            request_time,
-            request_content
+            requestTime,
+            requestContent
         )
         // 把请求消息的详情显示在文本视图上
-        tv_request.text = desc
+        tvRequest.text = desc
         findViewById<View>(R.id.btn_response).setOnClickListener(this)
-        val tv_response = findViewById<TextView>(R.id.tv_response)
-        tv_response.text = "待返回的消息为：" + mReponse
+        val tvResponse = findViewById<TextView>(R.id.tv_response)
+        tvResponse.text = "待返回的消息为：$mReponse"
     }
 
     override fun onClick(v: View) {
