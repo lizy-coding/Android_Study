@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">zzy</string>
+    <string name="account">Account</string>
+    <string name="password">Password</string>
+    <string name="remember_password">Remember Password</string>
+    <string name="login">Login</string>
+    <string name="send_force_offline_broadcast">Send Force Offline Broadcast</string>
+    <!-- 添加其他需要的字符串资源 -->
+
+</resources>
