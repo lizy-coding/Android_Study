@@ -1,18 +1,31 @@
 package com.study.chapter06.broadcastbestpractice
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 @SuppressLint("Registered")
 open class BaseActivity : AppCompatActivity() {
 
-    lateinit var receiver: ForceOfflineReceiver
+    private lateinit var receiver: ForceOfflineReceiver
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // 初始化 receiver
+        receiver = ForceOfflineReceiver()
+        val filter = IntentFilter().apply {
+            addAction(ForceOfflineAction)
+            addAction(Broadcastbestpractice)
+        }
+
+        // 注册广播接收器
+        registerReceiver(receiver, filter)
         Log.d("BaseActivity", javaClass.simpleName)
         ActivityCollector.addActivity(this)
     }
@@ -31,6 +44,11 @@ open class BaseActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+        // 在 onDestroy 方法中解除注册，以防止内存泄漏
+//        unregisterReceiver(receiver)
         ActivityCollector.removeActivity(this)
     }
+
+
+
 }

@@ -16,7 +16,6 @@ open class LoginActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
         accountEdit = findViewById(R.id.accountEdit)
         passwordEdit = findViewById(R.id.passwordEdit)
         rememberPass = findViewById(R.id.rememberPass)
@@ -35,8 +34,7 @@ open class LoginActivity : BaseActivity() {
         login.setOnClickListener {
             val account = accountEdit.text.toString()
             val password = passwordEdit.text.toString()
-            if (account == "admin" && password == "123456") {
-
+            if (account == "a" && password == "1") {
                 val editor = prefs.edit()
                 if (rememberPass.isChecked) {
                     editor.putBoolean("remember_password", true)
