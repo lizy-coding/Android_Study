@@ -13,19 +13,19 @@ import androidx.appcompat.app.AppCompatActivity
 @SuppressLint("Registered")
 open class BaseActivity : AppCompatActivity() {
 
-    private lateinit var receiver: ForceOfflineReceiver
+//    private lateinit var receiver: ForceOfflineReceiver
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // 初始化 receiver
-        receiver = ForceOfflineReceiver()
+//        receiver = ForceOfflineReceiver()
         val filter = IntentFilter().apply {
-            addAction(ForceOfflineAction)
+//            addAction(ForceOfflineAction)
             addAction(Broadcastbestpractice)
         }
 
         // 注册广播接收器
-        registerReceiver(receiver, filter)
+//        registerReceiver(receiver, filter)
         Log.d("BaseActivity", javaClass.simpleName)
         ActivityCollector.addActivity(this)
     }
@@ -33,13 +33,13 @@ open class BaseActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         val intentFilter = IntentFilter()
-        intentFilter.addAction(ForceOfflineAction)
-        registerReceiver(ForceOfflineReceiver(), intentFilter, RECEIVER_NOT_EXPORTED)
+//        intentFilter.addAction(ForceOfflineAction)
+//        registerReceiver(ForceOfflineReceiver(), intentFilter, RECEIVER_NOT_EXPORTED)
     }
 
     override fun onPause() {
         super.onPause()
-        unregisterReceiver(receiver)
+//        unregisterReceiver(receiver)
     }
 
     override fun onDestroy() {
