@@ -4,7 +4,7 @@ import android.app.Activity
 
 object ActivityCollector {
 
-    private val activities = ArrayList<Activity>();
+    private val activities = ArrayList<Activity>()
 
     fun addActivity(activity: Activity) {
         activities.add(activity)

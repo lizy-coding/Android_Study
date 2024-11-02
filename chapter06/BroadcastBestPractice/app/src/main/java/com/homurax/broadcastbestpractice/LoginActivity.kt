@@ -2,12 +2,16 @@ package com.homurax.broadcastbestpractice
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
-import missing.namespace.databinding.ActivityLoginBinding
+import com.homurax.broadcastbestpractice.databinding.ActivityLoginBinding
 
 class LoginActivity : BaseActivity() {
     // 声明绑定对象
     private lateinit var binding: ActivityLoginBinding
+
+    private var userVal: String = "admin"
+    private var passwordVal: String = "123"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +36,7 @@ class LoginActivity : BaseActivity() {
             val account = binding.accountEdit.text.toString()
             val password = binding.passwordEdit.text.toString()
 
-            if (account == "admin" && password == "123456") {
+            if (account == userVal && password == passwordVal) {
                 val editor = prefs.edit()
 
                 if (binding.rememberPass.isChecked) {
@@ -42,6 +46,10 @@ class LoginActivity : BaseActivity() {
                 } else {
                     editor.clear()
                 }
+                Log.d(
+                    "LoginActivity",
+                    "onCreate: save data, isChecked=${binding.rememberPass.isChecked}"
+                )
 
                 editor.apply()
 

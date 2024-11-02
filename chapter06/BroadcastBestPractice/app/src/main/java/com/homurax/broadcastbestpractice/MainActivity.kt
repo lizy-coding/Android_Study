@@ -2,7 +2,7 @@ package com.homurax.broadcastbestpractice
 
 import android.content.Intent
 import android.os.Bundle
-import missing.namespace.databinding.ActivityMainBinding
+import com.homurax.broadcastbestpractice.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity() {
 

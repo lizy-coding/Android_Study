@@ -5,8 +5,10 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
@@ -21,12 +23,15 @@ open class BaseActivity : AppCompatActivity() {
         ActivityCollector.addActivity(this)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onResume() {
         super.onResume()
         val intentFilter = IntentFilter()
         intentFilter.addAction("com.homurax.broadcastbestpractice.FORCE_OFFLINE")
         receiver = ForceOfflineReceiver()
-        registerReceiver(receiver, intentFilter)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            registerReceiver(receiver, intentFilter, RECEIVER_NOT_EXPORTED)
+        }
     }
 
     override fun onPause() {

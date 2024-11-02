@@ -6,9 +6,18 @@ android {
     viewBinding {
         enabled = true // 确保 View Binding 已启用
     }
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
     defaultConfig {
+        namespace "com.homurax.broadcastbestpractice"
         applicationId "com.homurax.broadcastbestpractice"
         minSdkVersion 21
+        compileSdk  34
         versionCode 1
         versionName "1.0"
 
@@ -29,6 +38,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'androidx.core:core-ktx:1.13.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.android.material:material:1.12.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
