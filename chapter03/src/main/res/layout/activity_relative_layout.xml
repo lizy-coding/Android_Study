@@ -117,5 +117,16 @@
         android:textColor="#000000"
         android:textSize="11sp" />
 
+    <TextView
+        android:id="@+id/tv_parent_bottom_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:text="底部右侧对齐"
+        android:textColor="#000000"
+        android:textSize="11sp" />
+
 
 </RelativeLayout>

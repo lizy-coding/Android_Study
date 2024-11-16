@@ -1,5 +1,6 @@
 package chapter03
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -13,16 +14,12 @@ class ButtonClickActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_button_click)
-        tv_result = findViewById(R.id.tv_result)
-        val btnClickSingle = findViewById<Button>(R.id.btn_click_single)
-        btnClickSingle.setOnClickListener(MyOnClickListener(tv_result))
-        val btnClickPublic = findViewById<Button>(R.id.btn_click_public)
-        btnClickPublic.setOnClickListener(this)
         textView = findViewById(R.id.tv_result)
         val btnClickSingle = findViewById<Button>(R.id.btn_click_single)
         btnClickSingle.setOnClickListener(MyOnClickListener(textView))
         val btnClickPublic = findViewById<Button>(R.id.btn_click_public)
         btnClickPublic.setOnClickListener(this)
+
     }
 
     override fun onClick(v: View) {

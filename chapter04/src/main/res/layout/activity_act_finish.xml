@@ -13,14 +13,16 @@
 
     <Button
         android:id="@+id/btn_finish"
+        android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="完成" />
+        android:text="Finish" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:maxLines="1"
         android:text="按返回键，或者点击左上角的箭头图标，或者点击上面的完成按钮，均可关闭当前页面、返回上个页面" />
 
 </LinearLayout>
